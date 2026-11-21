@@ -58,7 +58,7 @@
   .wrap{max-width:880px;margin:0 auto;padding:0 1.5rem}
 
   /* 첫 화면 */
-  .hero{display:grid;grid-template-columns:1fr 168px;gap:2.5rem;align-items:end;
+  .hero{display:grid;grid-template-columns:168px 1fr;gap:2.75rem;align-items:center;
         padding:4.5rem 0 3rem;border-bottom:1px solid var(--rule)}
   .hero h1{font-family:var(--serif);font-weight:700;font-size:clamp(2.6rem,7vw,4.2rem);
            line-height:1.1;margin:0 0 .35rem;letter-spacing:-.01em}
@@ -67,7 +67,7 @@
                 margin:0;max-width:30em}
   .hero .thesis mark{background:linear-gradient(transparent 58%,var(--mark) 58%,var(--mark) 92%,transparent 92%);
                      color:inherit;padding:0 .1em}
-  .hero img{width:168px;height:224px;object-fit:cover;border-radius:4px;display:block;
+  .hero img{order:-1;width:168px;height:224px;object-fit:cover;border-radius:4px;display:block;
             object-position:50% 30%}
 
   /* 본문 섹션 */
