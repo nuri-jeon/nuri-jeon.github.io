@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>전누리 | 정치사회학·사회운동·노동운동 연구</title>
+<meta name="description" content="사회학 연구자 전누리의 홈페이지. 정치사회학, 사회운동, 노동운동 연구와 논문·저서·연구보고서 목록.">
+<meta property="og:title" content="전누리 | 사회학 연구자">
+<meta property="og:description" content="정치사회학·사회운동·노동운동 연구. 논문, 저서, 연구보고서 목록.">
+<meta property="og:image" content="profile.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+<style>
+  :root{
+    --paper:#FAFAF7;
+    --ink:#1C2631;
+    --muted:#5E6873;
+    --rule:#D9DCD6;
+    --tint:#EEF1EC;
+    --mark:#E9C24A;   /* 형광펜 노랑: 한 군데에만 */
+    --link:#24527A;
+    --serif:"Gowun Batang", "Noto Serif KR", serif;
+    --sans:"Pretendard", "Apple SD Gothic Neo", "Malgun Gothic", system-ui, sans-serif;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+  body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);
+       font-size:17px;line-height:1.75;word-break:keep-all;-webkit-font-smoothing:antialiased}
+  a{color:var(--link);text-underline-offset:3px;text-decoration-thickness:1px}
+  a:hover{text-decoration-thickness:2px}
+  :focus-visible{outline:2px solid var(--link);outline-offset:3px;border-radius:2px}
+
+  /* 상단 바 */
+  .bar{position:sticky;top:0;z-index:10;background:rgba(250,250,247,.94);
+       backdrop-filter:blur(6px);border-bottom:1px solid var(--rule)}
+  .bar-in{max-width:880px;margin:0 auto;padding:.55rem 1.5rem;display:flex;
+          align-items:center;gap:1.25rem}
+  .bar .home{font-family:var(--serif);font-weight:700;color:var(--ink);text-decoration:none;font-size:1.05rem}
+  .bar nav{display:flex;gap:1.1rem;overflow-x:auto;flex:1;scrollbar-width:none}
+  .bar nav::-webkit-scrollbar{display:none}
+  .bar nav a{color:var(--muted);text-decoration:none;font-size:.9rem;white-space:nowrap}
+  .bar nav a:hover{color:var(--ink)}
+  .lang{border:1px solid var(--rule);background:none;color:var(--ink);font:inherit;
+        font-size:.82rem;padding:.2rem .6rem;border-radius:999px;cursor:pointer}
+  .lang:hover{border-color:var(--ink)}
+
+  .wrap{max-width:880px;margin:0 auto;padding:0 1.5rem}
+
+  /* 첫 화면 */
+  .hero{display:grid;grid-template-columns:1fr 168px;gap:2.5rem;align-items:end;
+        padding:4.5rem 0 3rem;border-bottom:1px solid var(--rule)}
+  .hero h1{font-family:var(--serif);font-weight:700;font-size:clamp(2.6rem,7vw,4.2rem);
+           line-height:1.1;margin:0 0 .35rem;letter-spacing:-.01em}
+  .hero .role{margin:0 0 1.6rem;color:var(--muted);font-size:1rem}
+  .hero .thesis{font-family:var(--serif);font-size:clamp(1.25rem,2.6vw,1.55rem);line-height:1.65;
+                margin:0;max-width:30em}
+  .hero .thesis mark{background:linear-gradient(transparent 58%,var(--mark) 58%,var(--mark) 92%,transparent 92%);
+                     color:inherit;padding:0 .1em}
+  .hero img{width:168px;height:224px;object-fit:cover;border-radius:4px;display:block;
+            object-position:50% 30%}
+
+  /* 본문 섹션 */
+  section{padding:3rem 0 1rem;scroll-margin-top:3.5rem}
+  h2{font-family:var(--serif);font-weight:700;font-size:1.6rem;margin:0 0 1.4rem;line-height:1.3}
+  h3{font-size:1rem;font-weight:600;margin:2rem 0 .8rem;color:var(--muted)}
+  p{margin:0 0 1rem;max-width:40em}
+
+  .interests{display:flex;flex-wrap:wrap;gap:.5rem;margin:1.2rem 0 0;padding:0;list-style:none}
+  .interests li{background:var(--tint);padding:.25rem .8rem;border-radius:3px;font-size:.93rem}
+
+  /* 연도 색인이 있는 목록 */
+  .log{list-style:none;margin:0;padding:0}
+  .log li{display:grid;grid-template-columns:6.4rem 1fr;gap:1rem;padding:.85rem 0;
+          border-top:1px solid var(--rule)}
+  .log li:last-child{border-bottom:1px solid var(--rule)}
+  .log .y{font-variant-numeric:tabular-nums;color:var(--muted);font-size:.93rem;padding-top:.12rem}
+  .log .t{font-weight:600}
+  .log .m{color:var(--muted);font-size:.93rem;display:block;margin-top:.15rem}
+  .log .links{display:flex;gap:1rem;margin-top:.3rem;font-size:.88rem}
+  .tag{display:inline-block;font-size:.76rem;font-weight:600;padding:.05rem .45rem;border-radius:3px;
+       margin-right:.4rem;vertical-align:.1em;border:1px solid var(--rule);color:var(--muted);font-weight:500}
+  .tag.lead{border-color:var(--ink);color:var(--ink);font-weight:600}
+
+  .cite{line-height:1.7}
+  .cite i{font-style:normal}
+
+  .sub{font-size:1rem;color:var(--muted);font-family:var(--sans);font-weight:400}
+  .series{margin:.5rem 0 0;padding-left:1.4rem;font-size:.95rem}
+  .log .series li{display:list-item;margin:.2rem 0;padding:0;border:0}
+  a.t{color:var(--ink)}
+  .log .links a + a{margin-left:0}
+  .contact{display:flex;flex-wrap:wrap;gap:.6rem 1.6rem;margin:0;padding:0;list-style:none}
+
+  footer{margin-top:4rem;padding:2rem 0 3rem;border-top:1px solid var(--rule);color:var(--muted);font-size:.85rem}
+
+  [hidden]{display:none!important}
+
+  @media (max-width:640px){
+    body{font-size:16px}
+    .hero{grid-template-columns:1fr;padding-top:2.5rem;gap:1.5rem}
+    .hero img{width:112px;height:150px;order:-1}
+    .log li{grid-template-columns:1fr;gap:.15rem}
+  }
+  @media print{
+    .bar,.lang{display:none}
+    body{background:#fff}
+    a{color:inherit}
+  }
+</style>
+</head>
+<body>
+
+<header class="bar">
+  <div class="bar-in">
+    <a class="home" href="#top">전누리</a>
+    <nav aria-label="섹션 이동" id="nav-ko">
+      <a href="#research">연구</a>
+      <a href="#articles">논문</a>
+      <a href="#books">저서</a>
+      <a href="#talks">발표</a>
+      <a href="#writing">기고</a>
+      <a href="#reports">보고서</a>
+      <a href="#cv">이력</a>
+      <a href="#awards">수상</a>
+      <a href="#teaching">강의</a>
+      <a href="#contact">연락처</a>
+    </nav>
+    <nav aria-label="Sections" id="nav-en" hidden>
+      <a href="#en-research">Research</a>
+      <a href="#en-articles">Articles</a>
+      <a href="#en-talks">Talks</a>
+      <a href="#en-books">Books</a>
+      <a href="#en-cv">CV</a>
+      <a href="mailto:slhs8888@gmail.com">Contact</a>
+    </nav>
+    <button class="lang" id="lang" type="button" aria-label="Switch to English">EN</button>
+  </div>
+</header>
+
+<!-- =========================== 한국어 =========================== -->
+<main id="ko" class="wrap">
+
+  <div class="hero" id="top">
+    <div>
+      <h1>전누리</h1>
+      <p class="role">사회학 연구자 · 중앙대학교 사회학과 박사수료</p>
+      <p class="thesis">사람들이 어떻게 함께 <mark>모이고, 항의하는지</mark> 연구합니다.</p>
+    </div>
+    <img src="profile.jpg" alt="학술대회에서 발표하는 전누리" width="168" height="224">
+  </div>
+
+  <section id="research">
+    <h2>연구</h2>
+    <!-- 소개 문구: 아래 <p> 안의 문장을 바꾸면 됩니다. -->
+    <p>성공회대 사회학과에서 석사과정을 마치고 중앙대 사회학과에서 박사과정을 수료했습니다. 사회운동과 정치사회학, 노동운동에 관심을 가지고 공부하고 있습니다. 2021년부터 전국금속노동조합 노동연구원 객원연구위원으로 일하고 있습니다.</p>
+    <p>집회·시위 참여자의 이념적 양극화와 ‘분쟁사회’의 격화, IT·게임산업 노조 조직화의 확산, 1980–90년대 고등학생운동과 그 참여자들의 이후 삶을 다룬 논문을 발표했습니다. 한국의 노동조합과 청소년운동의 역사를 다룬 책도 여러 권 함께 펴냈습니다.</p>
+    <p>최근 한국 사회에서 거세지고 있는 보수 진영의 항의행동과 그 동원 과정에 주목해 자료를 모으고 있습니다. 아울러 학생인권조례를 둘러싼 찬반 운동의 경합과 대립을 주제로 박사학위논문을 쓰고 있습니다.</p>
+    <ul class="interests" aria-label="연구 관심">
+      <li>사회운동·집합행동</li><li>정치사회학</li><li>노동운동</li><li>노동사회학</li>
+      <li>노조 조직화</li><li>청소년·학생운동</li><li>정치적 양극화</li>
+    </ul>
+  </section>
+
+  <section id="articles">
+    <h2>학술논문</h2>
+    <ul class="log">
+      <li>
+        <span class="y">2025</span>
+        <div class="cite">
+          <span class="tag lead">주저자</span>전누리·김우식. 2025. 「“우리도 노조 만들 수 있는 거였어?”: IT·게임산업 노조 조직화 확산 연구」. 『산업노동연구』 31(3): 45–93.
+          <span class="links"><a href="https://www.dbpia.co.kr/journal/articleDetail?nodeId=NODE12700001">DBpia</a></span>
+        </div>
+      </li>
+      <li>
+        <span class="y">2024</span>
+        <div class="cite">
+          <span class="tag lead">주저자</span>전누리·신진욱. 2024. 「한국에서 집단적 항의행동의 확산과 ‘분쟁사회’의 격화: 집회·시위 참여자의 이념적 양극화와 정치적 당파성, 2013~2022」. 『한국사회학』 58(1): 53–97.
+          <span class="links"><a href="https://doi.org/10.21562/kjs.2024.02.58.1.53">DOI 10.21562/kjs.2024.02.58.1.53</a><a href="https://www.dbpia.co.kr/journal/articleDetail?nodeId=NODE11732433">DBpia</a></span>
+        </div>
+      </li>
+      <li>
+        <span class="y">2019</span>
+        <div class="cite">
+          <span class="tag">단독</span>전누리. 2019. 「고등학생운동 참여자의 사회진출에 관한 연구: 고등학생운동의 집합적 정체성 형성과 그 영향」. 『기억과 전망』 41호.
+          <span class="links"><a href="https://m.riss.kr/search/detail/DetailView.do?p_mat_type=1a0202e37d52c72d&amp;control_no=4b7d6075ed10b43fc85d2949c297615a">RISS</a></span>
+        </div>
+      </li>
+    </ul>
+
+    <h3>학위논문</h3>
+    <ul class="log">
+      <li>
+        <span class="y">2016</span>
+        <div class="cite">전누리. 2016. 「고등학생운동 참여자의 사회진출에 관한 연구: 고등학생운동의 집합적 정체성 형성과 그 결과를 중심으로」. 성공회대학교 일반대학원 사회학과 석사학위논문.</div>
+      </li>
+    </ul>
+  </section>
+
+  <section id="books">
+    <h2>저서 <span class="sub">(공저)</span></h2>
+    <ul class="log">
+      <li><span class="y">2025</span><div class="cite">조한진희 기획, 김소연·전성원·김대현·정경화 외 7명. 2025. 『고등학생 운동사』. 동녘.
+        <span class="links"><a href="https://product.kyobobook.co.kr/detail/S000216144589">책 정보</a></span></div></li>
+      <li><span class="y">2024</span><div class="cite">왕의조·전누리·정경원. 2024. 『보건의료노조 37년사: 1987–2023 — 돈보다 생명을』. 전국보건의료산업노동조합 기획. 한내.
+        <span class="links"><a href="https://product.kyobobook.co.kr/detail/S000215056341">책 정보</a></span></div></li>
+      <li><span class="y">2024</span><div class="cite">왕의조·전누리. 2024. 『키워드로 보는 보건의료노조 37년사: 1987–2023 — 돈보다 생명을』. 전국보건의료산업노동조합 기획. 한내.
+        <span class="links"><a href="https://product.kyobobook.co.kr/detail/S000215056338">책 정보</a></span></div></li>
+      <li><span class="y">2017</span><div class="cite">정경원·전누리. 2017. 『서울지하철노동조합 30년사: 해방역에 닿을 때까지』. 한내.
+        <span class="links"><a href="https://www.aladin.co.kr/shop/wproduct.aspx?ItemId=118342608">책 정보</a></span></div></li>
+      <li><span class="y">2016</span><div class="cite">공현·전누리. 2016. 『우리는 현재다: 청소년이 만들어온 한국 현대사』. 빨간소금.
+        <span class="links"><a href="https://product.kyobobook.co.kr/detail/S000001969962">책 정보</a></span></div></li>
+    </ul>
+  </section>
+
+  <section id="talks">
+    <h2>학술대회 발표</h2>
+    <ul class="log">
+      <li><span class="y">2026.02</span><div class="cite">전누리·신진욱. “Nostalgia of the ‘86 Generation’ or Multi-layered Life Histories of Resistance?: A Field In-depth Interview Study of Middle-aged Participants in Impeachment Demonstrations.” IPAC 2026 (International Postgraduate and Academic Conference), 리쓰메이칸대학 사회학연구과, 교토, 2026년 2월 10–11일.
+        <span class="links"><a href="https://www.ritsumei.ac.jp/gss/topics/article/?id=73">행사 정보</a></span></div></li>
+      <li><span class="y">2025.08</span><div class="cite">전누리. 「탄핵집회 현장 심층면접 연구: 어떻게 수행하고 무엇을 경험했나?」. 비판사회학회 학술대회, 2025년 8월.
+        <span class="links"><a href="https://www.dbpia.co.kr/journal/articleDetail?nodeId=NODE12398945">DBpia</a></span></div></li>
+      <li><span class="y">2025.06</span><div class="cite">전누리·신진욱. 「586의 추억인가? 저항의 다층적 생애사인가?: 탄핵 집회 중장년 참여자의 현장 심층면접 연구」. 한국사회학회 2025 전기사회학대회, 계명대학교, 2025년 6월 20–21일.
+        <span class="links"><a href="https://www.ksa21.or.kr/includes/lib/attachment_download_post.php?id=4129&amp;idx=0">자료집</a></span></div></li>
+      <li><span class="y">2024.08</span><div class="cite">전누리·김우식. 「노조 조직화 확산에 관한 연구: 화섬식품노조 IT위원회 사례를 중심으로」. 한국산업노동학회 2024 신진연구자 여름캠프, 충남 예산, 2024년 8월 23–24일.</div></li>
+      <li><span class="y">2021.12</span><div class="cite">전누리. 「누가 거리로 나가는가?: 2013–2020년 한국의 집회·시위 참여자 분석」. 한국사회학회 사회학대회, 2021년 12월.
+        <span class="links"><a href="https://www.dbpia.co.kr/journal/articleDetail?nodeId=NODE11405639">DBpia</a></span></div></li>
+      <li><span class="y">2021.02</span><div class="cite">전누리. “‘Exit’ as an Inevitable Choice: A Qualitative Study on the Resignation Experience of Specialized High School Graduates.” IPAC 2021 (International Postgraduate and Academic Conference), 중앙대학교(온라인), 2021년 2월 19일.</div></li>
+    </ul>
+  </section>
+
+  <section id="writing">
+    <h2>기고</h2>
+    <ul class="log">
+      <li><span class="y">2026.08</span><div class="cite">「인공지능 등 기술발전에 대한 해외 노동운동의 대응 소개」. 금속노조 노동연구원 이슈페이퍼.
+        <span class="links"><a href="http://www.metalunion.re.kr/bbs/board.php?bo_table=B04&amp;wr_id=229">원문</a></span></div></li>
+      <li><span class="y">2025.09</span><div class="cite">「독일 노동운동의 새로운 도전: 극우포퓰리즘의 공세와 대응」. 금속노조 노동연구원 이슈페이퍼.
+        <span class="links"><a href="http://www.metalunion.re.kr/bbs/board.php?bo_table=B04&amp;wr_id=218">원문</a></span></div></li>
+      <li><span class="y">2025.02</span><div class="cite">「트럼프 2기 행정부의 노동정책과 노동운동의 대응 전망」. 『노동법률』.
+        <span class="links"><a href="https://www.dbpia.co.kr/journal/articleDetail?nodeId=NODE12058189">DBpia</a></span></div></li>
+      <li><span class="y">2024.07</span><div class="cite">「책을 검열하는 미국의 극우운동: 미국 학교와 공공 도서관에서의 도서 금지 전쟁」. 『오늘의 교육』 81호.
+        <span class="links"><a href="https://communebut.com/Article/?idx=53088084&amp;bmode=view">원문</a><a href="https://www.dbpia.co.kr/journal/articleDetail?nodeId=NODE11863665">DBpia</a></span></div></li>
+      <li><span class="y">2024.05</span><div class="cite">「미국 노동운동의 고조와 그 배경」. 금속노조 노동연구원 이슈페이퍼.
+        <span class="links"><a href="http://www.metalunion.re.kr/bbs/board.php?bo_table=B04&amp;wr_id=202">원문</a></span></div></li>
+      <li><span class="y">2023.12</span><div class="cite">「화학섬유식품산업노조 사무·연구·일반직 조직화 사례 분석」. 금속노조 노동연구원 이슈페이퍼.
+        <span class="links"><a href="http://www.metalunion.re.kr/bbs/board.php?bo_table=B04&amp;wr_id=197">원문</a></span></div></li>
+      <li><span class="y">2023.05</span><div class="cite">「기업의 사회적 책임성(CSR)과 ESG 경과의 소개」. 금속노조 노동연구원 이슈페이퍼.
+        <span class="links"><a href="http://www.metalunion.re.kr/bbs/board.php?bo_table=B04&amp;wr_id=190">원문</a></span></div></li>
+      <li><span class="y">2022.11</span><div class="cite">「소규모 사업장에 관한 선행연구 및 조직화 사례」. 금속노조 노동연구원 이슈페이퍼.
+        <span class="links"><a href="http://www.metalunion.re.kr/bbs/board.php?bo_table=B04&amp;wr_id=184">원문</a></span></div></li>
+      <li><span class="y">2022.05</span><div class="cite">「기술발전이 노동과 일자리에 미칠 영향을 전망한 연구 동향」. 금속노조 노동연구원 이슈페이퍼.
+        <span class="links"><a href="http://www.metalunion.re.kr/bbs/board.php?bo_table=B04&amp;wr_id=178">원문</a></span></div></li>
+      <li><span class="y">2021.12</span><div class="cite">「사무·연구직 조직화 논의 및 사례 소개」. 금속노조 노동연구원 이슈페이퍼.
+        <span class="links"><a href="http://www.metalunion.re.kr/bbs/board.php?bo_table=B04&amp;wr_id=173">원문</a></span></div></li>
+      <li><span class="y">2021.06</span><div class="cite">「조선산업 사내하청/비정규 노동자 조직화 방안 제언」. 금속노조 노동연구원 이슈페이퍼.
+        <span class="links"><a href="http://www.metalunion.re.kr/bbs/board.php?bo_table=B04&amp;wr_id=166">원문</a></span></div></li>
+      <li><span class="y">2020.03–<br>2021.01</span><div class="cite">연재 「1980년대의 청소년들, 너무나 정치적이었던」(전 6회). 『오늘의 교육』.
+        <ol class="series">
+          <li><a href="https://www.dbpia.co.kr/journal/articleDetail?nodeId=NODE11771114">시대 속의 중고생들 거리에 서다</a> (2020.03)</li>
+          <li><a href="https://www.dbpia.co.kr/journal/articleDetail?nodeId=NODE11771071">학교와 사회를 바꾸는 주체로 나서다: 전교조 지지 투쟁까지의 고등학생운동의 폭발적 전개</a> (2020.05)</li>
+          <li><a href="https://www.dbpia.co.kr/journal/articleDetail?nodeId=NODE11771032">학교를 ‘현장’으로, 학생을 ‘사회변혁의 주체’로: 고등학생운동의 집합적 정체성</a> (2020.07)</li>
+          <li><a href="https://www.dbpia.co.kr/journal/articleDetail?nodeId=NODE11770992">‘운동에 눈뜬’ 고등학생들의 ‘학생답지 않은’ 생활</a> (2020.09)</li>
+          <li><a href="https://www.dbpia.co.kr/journal/articleDetail?nodeId=NODE11770952">대학이냐, 노동 현장이냐?: 졸업 이후의 진로 선택과 진입 과정</a> (2020.11)</li>
+          <li><a href="https://www.dbpia.co.kr/journal/articleDetail?nodeId=NODE11770923">고등학생운동은 한국 사회에 무엇을 남겼는가: 운동의 소멸 그리고 운동의 결과와 의의</a> (2021.01)</li>
+        </ol></div></li>
+      <li><span class="y">2019.07</span><div class="cite">「참교육을 넘어 고등학생운동을 기억하기」. 『오늘의 교육』 51호.
+        <span class="links"><a href="https://communebut.com/Article/?idx=6778494&amp;bmode=view">원문</a><a href="https://www.dbpia.co.kr/journal/articleDetail?nodeId=NODE11771226">DBpia</a></span></div></li>
+      <li><span class="y">2012.06</span><div class="cite">「마침내 열린 학생인권의 시대: 서울특별시학생인권조례의 제정과 그 의미」. 『황해문화』.
+        <span class="links"><a href="https://www.dbpia.co.kr/journal/articleDetail?nodeId=NODE01872514">DBpia</a></span></div></li>
+      <li><span class="y">2010.12</span><div class="cite">「학생인권조례 통과와 전망」. 『진보평론』 46호(2010년 겨울): 207–214.
+        <span class="links"><a href="https://www.dbpia.co.kr/journal/articleDetail?nodeId=NODE01559278">DBpia</a></span></div></li>
+    </ul>
+  </section>
+
+  <section id="reports">
+    <h2>연구보고서</h2>
+    <ul class="log">
+      <li><span class="y">2025</span><div><span class="tag lead">연구책임</span><span class="t">금속노조 청년 조합원 정치의식 연구</span><span class="m">전국금속노동조합 조직실</span></div></li>
+      <li><span class="y">2025</span><div><span class="tag">공동연구원</span><span class="t">중소사업장 산업안전보건 수준 향상을 위한 다층적 접근</span><span class="m">한국노동연구원</span><span class="links"><a href="https://www.kli.re.kr/kli/newestPblctView.es?pblct_sn=10267&amp;mid=a10101000000">보고서</a></span></div></li>
+      <li><span class="y">2025</span><div><span class="tag">공동연구원</span><span class="t">전기전자산업 조직화 사례와 금속노조운동에 대한 시사점</span><span class="m">전국금속노동조합 노동연구원</span><span class="links"><a href="http://www.metalunion.re.kr/bbs/board.php?bo_table=B07&amp;wr_id=191">보고서</a></span></div></li>
+      <li><span class="y">2025</span><div><span class="tag">공동연구원</span><span class="t">노조탄압 사례를 통해 살펴본 노조운동의 위기와 과제</span><span class="m">전국금속노동조합 노동연구원</span><span class="links"><a href="http://www.metalunion.re.kr/bbs/board.php?bo_table=B07&amp;wr_id=192">보고서</a></span></div></li>
+      <li><span class="y">2024</span><div><span class="tag">공동연구원</span><span class="t">금속노조 전략조직화 평가와 과제</span><span class="m">전국금속노동조합 노동연구원</span></div></li>
+      <li><span class="y">2024</span><div><span class="tag">공동연구원</span><span class="t">이주노동에 대한 노동조합의 대응 현황과 과제</span><span class="m">전국금속노동조합 노동연구원</span><span class="links"><a href="http://www.metalunion.re.kr/bbs/board.php?bo_table=B07&amp;wr_id=186">보고서</a></span></div></li>
+      <li><span class="y">2023</span><div><span class="tag">공동연구원</span><span class="t">제조업 청년 노동자 조직화 방안 연구</span><span class="m">전국금속노동조합 노동연구원</span><span class="links"><a href="http://www.metalunion.re.kr/bbs/board.php?bo_table=B07&amp;wr_id=184">보고서</a></span></div></li>
+      <li><span class="y">2022</span><div><span class="tag">공동연구원</span><span class="t">작은 사업장 실태 및 조직화 방안: 산업단지와 도심형 제조업을 중심으로</span><span class="m">전국금속노동조합 노동연구원</span><span class="links"><a href="http://www.metalunion.re.kr/bbs/board.php?bo_table=B07&amp;wr_id=178">보고서</a></span></div></li>
+      <li><span class="y">2022</span><div><span class="tag">공동연구원</span><span class="t">금속노조 신규조직화 현황 및 사례: 사무연구직을 중심으로</span><span class="m">전국금속노동조합 노동연구원</span><span class="links"><a href="http://www.metalunion.re.kr/bbs/board.php?bo_table=B07&amp;wr_id=177">보고서</a></span></div></li>
+      <li><span class="y">2022</span><div><span class="tag lead">연구책임</span><span class="t">1980년대 후반 광주 고등학생 민주화운동 참여 양상 연구</span><span class="m">광주광역시교육청·광주연구소</span><span class="links"><a href="https://yhrjieum.kr/data/?q=YToyOntzOjEyOiJrZXl3b3JkX3R5cGUiO3M6MzoiYWxsIjtzOjc6ImtleXdvcmQiO3M6Njoi6rSR7KO8Ijt9&amp;bmode=view&amp;idx=11508094&amp;t=board">보고서</a></span></div></li>
+      <li><span class="y">2021</span><div><span class="tag">공동연구원</span><span class="t">코로나19 이후 노동조합 활동방향 연구</span><span class="m">전국금속노동조합 노동연구원</span></div></li>
+      <li><span class="y">2021</span><div><span class="tag">공동연구원</span><span class="t">데이터기반 미래숙련 전망체계 구축</span><span class="m">한국직업능력연구원</span><span class="links"><a href="https://www.krivet.re.kr/kor/sub.do?menuSn=12&amp;pstNo=E120220037">보고서</a></span></div></li>
+      <li><span class="y">2020</span><div><span class="tag">공동연구원</span><span class="t">조선산업 비정규, 사내하청 조직화 연구</span><span class="m">전국금속노동조합 노동연구원·조선업종노조연대</span></div></li>
+      <li><span class="y">2019</span><div><span class="tag lead">연구책임</span><span class="t">대학 비진학 청년 현황 및 심층면접조사: 특성화고 졸업자를 중심으로</span><span class="m">서울특별시 청년허브·대학입시거부로 삶을 바꾸는 투명가방끈</span><span class="links"><a href="https://hiddenbag.net/notice/?q=YTozOntzOjEyOiJrZXl3b3JkX3R5cGUiO3M6MzoiYWxsIjtzOjc6ImtleXdvcmQiO3M6OToi67mE7KeE7ZWZIjtzOjQ6InBhZ2UiO2k6Mjt9&amp;bmode=view&amp;idx=5918484&amp;t=board">보고서</a></span></div></li>
+    </ul>
+  </section>
+
+  <section id="cv">
+    <h2>이력</h2>
+
+    <h3>학력</h3>
+    <ul class="log">
+      <li><span class="y">2018–2019</span><div><span class="t">중앙대학교 일반대학원 사회학과 박사과정 수료</span><span class="m">2019년 수료 · 지도교수 신진욱</span></div></li>
+      <li><span class="y">2016</span><div><span class="t">성공회대학교 일반대학원 사회학과 석사</span><span class="m">지도교수 이종구</span></div></li>
+      <li><span class="y">2014</span><div><span class="t">단국대학교 정치외교학과 학사</span><span class="m">사학과 제2전공</span></div></li>
+    </ul>
+
+    <h3>경력</h3>
+    <ul class="log">
+      <li><span class="y">2021–</span><div><span class="t">전국금속노동조합 노동연구원 객원연구위원</span></div></li>
+      <li><span class="y">2018–2020</span><div><span class="t">BK21플러스 「복합위기 시대의 지속가능한 사회통합」 참여대학원생·보조연구원</span><span class="m">중앙대학교 사회학과</span></div></li>
+      <li><span class="y">2014–2019</span><div><span class="t">현대한국구술자료관 구축 연구사업 보조연구원(2014–2016), 검수위원(2016–2019)</span><span class="m">한국학중앙연구원 한국학진흥사업단</span></div></li>
+    </ul>
+
+  </section>
+
+  <section id="awards">
+    <h2>수상</h2>
+    <ul class="log">
+      <li><span class="y">2020</span><div><span class="t">반짝반짝 논문공모전 가작</span><span class="m">참여연대 참여사회연구소 · 수상 논문 「고등학생운동 참여자의 사회진출에 관한 연구」(『기억과 전망』 41호)</span>
+        <span class="links"><a href="http://peoplepower21.org/Research/1747047">수상 공고</a></span></div></li>
+      <li><span class="y">2016</span><div><span class="t">대학원 우수논문상</span><span class="m">성공회대학교 · 석사학위논문</span></div></li>
+    </ul>
+  </section>
+
+  <section id="teaching">
+    <h2>강의</h2>
+    <ul class="log">
+      <li><span class="y">2025.09–현재</span><div><span class="t">현대사회의 쟁점</span><span class="m">중앙대학교 교양학부 · 학부생 대상</span></div></li>
+    </ul>
+  </section>
+
+  <section id="contact" data-contact>
+    <h2>연락처</h2>
+    <!-- 아래 href 안에 주소를 넣으면 그 항목이 화면에 나타납니다. 비워 두면 숨겨집니다. -->
+    <ul class="contact">
+      <li><a data-c href="mailto:slhs8888@gmail.com">slhs8888@gmail.com</a></li>
+      <li><a data-c href="https://www.dbpia.co.kr/author/authorDetail?ancId=944220928">DBpia 저자 페이지</a></li>
+      <li><a data-c href="">KCI 연구자 정보</a></li>
+      <li><a data-c href="">Google Scholar</a></li>
+      <li><a data-c href="">ORCID</a></li>
+      <li><a data-c href="cv_ko.pdf">국문 CV (PDF)</a></li>
+      <li><a data-c href="cv_en.pdf">영문 CV (PDF)</a></li>
+    </ul>
+  </section>
+
+  <footer>© 2026 전누리 · 최종 수정 2026년 11월</footer>
+</main>
+
+<!-- =========================== English =========================== -->
+<main id="en" class="wrap" lang="en" hidden>
+
+  <div class="hero">
+    <div>
+      <h1>Nu-ri Jeon</h1>
+      <p class="role">Sociologist · Ph.D. Candidate (ABD), Department of Sociology, Chung-Ang University, Seoul</p>
+      <p class="thesis">I study how people <mark>come together and protest</mark>.</p>
+    </div>
+    <img src="profile.jpg" alt="Nu-ri Jeon presenting at a conference" width="168" height="224">
+  </div>
+
+  <section id="en-research">
+    <h2>Research</h2>
+    <p>I work on political sociology, social movements, and labor movements in South Korea. My research has examined the ideological polarization of protest participants and the rise of a “contentious society,” the diffusion of union organizing in the IT and gaming industries, and the high school student movement of the 1980s–90s and the later lives of its participants.</p>
+    <p>I am currently collecting data on the rise of conservative protest and mobilization in South Korea, and writing a dissertation on the contest between movements for and against the Student Human Rights Ordinances. Since 2021 I have been a visiting research fellow at the Labor Research Institute of the Korean Metal Workers’ Union.</p>
+  </section>
+
+  <section id="en-articles">
+    <h2>Journal articles</h2>
+    <p style="color:var(--muted);font-size:.93rem">All articles are written in Korean.</p>
+    <ul class="log">
+      <li><span class="y">2025</span><div class="cite">Jeon, Nu-ri, and Woosik Kim. 2025. “‘Can We Unionize, Too?’: A Study on Unionization Diffusion in Korea’s IT and Gaming Industries.” <i>Sanup Nodong Yongu</i> [산업노동연구] 31(3): 45–93. <span class="links"><a href="https://www.dbpia.co.kr/journal/articleDetail?nodeId=NODE12700001">DBpia</a></span></div></li>
+      <li><span class="y">2024</span><div class="cite">Jeon, Nu-ri, and Jin-Wook Shin. 2024. “The Generalization of Protest Participation and the Intensification of ‘Contentious Society’: An Analysis of the Ideological Polarization and Political Partisanship of the Participants of Collective Protests in South Korea, 2013–2022.” <i>Korean Journal of Sociology</i> 58(1): 53–97. <span class="links"><a href="https://doi.org/10.21562/kjs.2024.02.58.1.53">DOI 10.21562/kjs.2024.02.58.1.53</a></span></div></li>
+      <li><span class="y">2019</span><div class="cite">Jeon, Nu-ri. 2019. “The Career Paths of High School Student Movement Participants: The Formation of a Collective Identity and its Impacts.” <i>Memory &amp; Vision</i> [기억과 전망] 41.</div></li>
+    </ul>
+  </section>
+
+  <section id="en-talks">
+    <h2>Selected presentations</h2>
+    <ul class="log">
+      <li><span class="y">2026</span><div class="cite">Jeon, Nu-ri, and Jin-Wook Shin. “Nostalgia of the ‘86 Generation’ or Multi-layered Life Histories of Resistance?: A Field In-depth Interview Study of Middle-aged Participants in Impeachment Demonstrations.” IPAC 2026 (International Postgraduate and Academic Conference), Ritsumeikan University, Kyoto, February 10–11. <span class="links"><a href="https://www.ritsumei.ac.jp/gss/topics/article/?id=73">Event</a></span></div></li>
+      <li><span class="y">2021</span><div class="cite">Jeon, Nu-ri. “‘Exit’ as an Inevitable Choice: A Qualitative Study on the Resignation Experience of Specialized High School Graduates.” IPAC 2021, Chung-Ang University (online), February 19.</div></li>
+    </ul>
+  </section>
+
+  <section id="en-books">
+    <h2>Books (co-authored, in Korean)</h2>
+    <ul class="log">
+      <li><span class="y">2025</span><div class="cite"><i>A History of the High School Student Movement</i> [고등학생 운동사]. Seoul: Dongnyok.</div></li>
+      <li><span class="y">2024</span><div class="cite"><i>A 37-Year History of the Korean Health and Medical Workers’ Union, 1987–2023</i> [보건의료노조 37년사]. Seoul: Hannae.</div></li>
+      <li><span class="y">2017</span><div class="cite"><i>A 30-Year History of the Seoul Subway Labor Union</i> [서울지하철노조 30년사]. Seoul: Hannae.</div></li>
+      <li><span class="y">2016</span><div class="cite"><i>We Are the Present: Modern Korean History Made by Youth</i> [우리는 현재다]. Seoul: Ppalgansogeum.</div></li>
+    </ul>
+    <p style="color:var(--muted);font-size:.93rem;margin-top:1rem">Book titles translated. Full list of research reports is on the Korean page.</p>
+  </section>
+
+  <section id="en-cv">
+    <h2>Education and positions</h2>
+    <ul class="log">
+      <li><span class="y">2021–</span><div><span class="t">Visiting Research Fellow, Labor Research Institute, Korean Metal Workers’ Union</span></div></li>
+      <li><span class="y">2025–</span><div><span class="t">Lecturer, General Education, Chung-Ang University</span></div></li>
+      <li><span class="y">2018–2019</span><div><span class="t">Ph.D. Program in Sociology, Chung-Ang University</span><span class="m">Coursework completed 2019 · Advisor: Jin-Wook Shin</span></div></li>
+      <li><span class="y">2016</span><div><span class="t">M.A. in Sociology, SungKongHoe University</span></div></li>
+      <li><span class="y">2014</span><div><span class="t">B.A. in Political Science and Diplomacy, Dankook University</span><span class="m">Second major in History</span></div></li>
+    </ul>
+  </section>
+
+  <section><h2>Contact</h2><ul class="contact"><li><a href="mailto:slhs8888@gmail.com">slhs8888@gmail.com</a></li><li><a href="cv_en.pdf">CV (PDF)</a></li></ul></section>
+
+  <footer>© 2026 Nu-ri Jeon · Last updated November 2026</footer>
+</main>
+
+<script>
+  // 비어 있는 연락처 링크 숨기기
+  document.querySelectorAll('a[data-c]').forEach(function(a){
+    if(!a.getAttribute('href')) a.parentElement.hidden = true;
+  });
+  var anyContact = document.querySelector('.contact li:not([hidden])');
+  if(!anyContact) document.querySelector('[data-contact]').hidden = true;
+
+  // 한국어 / English 전환
+  var btn = document.getElementById('lang');
+  function setLang(l){
+    var en = l === 'en';
+    document.getElementById('ko').hidden = en;
+    document.getElementById('en').hidden = !en;
+    document.getElementById('nav-ko').hidden = en;
+    document.getElementById('nav-en').hidden = !en;
+    document.documentElement.lang = en ? 'en' : 'ko';
+    btn.textContent = en ? '한국어' : 'EN';
+    btn.setAttribute('aria-label', en ? '한국어로 보기' : 'Switch to English');
+    document.querySelector('.bar .home').textContent = en ? 'Nu-ri Jeon' : '전누리';
+    if(history.replaceState) history.replaceState(null,'', en ? '#en' : location.pathname);
+  }
+  btn.addEventListener('click', function(){
+    setLang(document.getElementById('en').hidden ? 'en' : 'ko');
+    window.scrollTo(0,0);
+  });
+  if(location.hash === '#en') setLang('en');
+</script>
+</body>
+</html>
